@@ -1,0 +1,141 @@
+/* Style khusus halaman Kontak Kami */
+.kontak-section {
+    text-align: center;
+}
+
+.kontak-section.full-bg {
+    background: url('../img/landingpage.jpg') no-repeat center center/cover;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.kontak-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+.kontak-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kontak-content span {
+    color: #b31095;
+}
+
+.kontak-content h1 {
+    font-size: 2.7rem;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #b31095;
+    letter-spacing: 1px;
+    text-align: center;
+    /* background: rgba(255, 255, 255, 0.8);
+    padding: 2px 2px;
+    border-radius: 10px;
+    border: 3px solid var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px); */
+    display: inline-block;
+}
+
+.kontak-content p {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.kontak-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+}
+
+.kontak-card {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    padding: 28px 20px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.3s;
+}
+
+.kontak-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 2px solid var(--primary-color);
+}
+
+.kontak-card h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #fff;
+    text-align: center;
+}
+
+.kontak-card:hover {
+    box-shadow: 0 8px 28px rgba(0, 163, 16, 0.13), 0 2px 8px rgba(0,0,0,0.08);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.wa-btn {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,163,16,0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.wa-btn:hover {
+    background: var(--secondary-color);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0,163,16,0.18);
+}
+
+@media (max-width: 900px) {
+    .kontak-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+    
+    .kontak-content {
+        padding-top: 90px; /* Tambahkan ini agar h1 tidak tertutup navbar */
+    }
+
+    .kontak-content h1 {
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+} 

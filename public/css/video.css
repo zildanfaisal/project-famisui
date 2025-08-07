@@ -1,0 +1,149 @@
+.video-section {
+    text-align: center;
+}
+
+.video-section.full-bg {
+    background: url('../img/landingpage.jpg') no-repeat center center/cover;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.video-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    z-index: 1;
+}
+
+.video-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 36px;
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+}
+
+.video-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    padding: 18px 14px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+.video-card img {
+    width: 280px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.video-card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    background: none;
+    border: none;
+}
+
+.video-card h2:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    .video-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .video-card {
+        width: 300px;
+    }
+
+    .video-card img {
+        width: 280px;
+        height: 170px;
+    }
+}
+
+
+
+
+
+
+/* PAGE VIDEO PLAYER */
+
+.video-player-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.video-player-content h1 {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.video-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
