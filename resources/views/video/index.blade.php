@@ -4,6 +4,12 @@
         <div class="video-content">
             <h1>Video</h1>
 
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             @if(Auth::check() && Auth::user()->role === 'admin')
                 <div class="text-left" style="margin-bottom: 20px;">
                     <a href="{{ route('video.create') }}" class="btn btn-primary">
@@ -11,9 +17,33 @@
                     </a>
                 </div>
             @endif
-
-            <h1>Statis</h1>
+            
             <div class="video-cards">
+                @foreach($videos as $video)
+                    <div class="video-card">
+                        <a href="{{ route('video.show', $video->id) }}">
+                        <img src="{{ asset('storage/' . $video->thumbnail_path) }}" alt="{{ $video->title }}" style="width:100%; height:auto;">
+                        <h2>{{ $video->title }}</h2>
+
+                        @if(Auth::check() && Auth::user()->role === 'admin')
+                            <div class="action-buttons">
+                                <a href="{{ route('video.edit', $video->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('video.destroy', $video->id) }}" method="POST" style="display:inline-block;">
+                                    @csrf @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin hapus?')">
+                                        Delete
+                                    </button>
+                                </form>
+                            </div>
+                        @endif
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+
+
+            {{-- <h1>Statis</h1> --}}
+            {{-- <div class="video-cards">
                 <a href="{{ route('video.show', ['id' => 1]) }}" class="video-card">
                     <img src="{{ asset('img/thumbnails/video1.png') }}" >
                     <h2>Khawatir jika harus berhenti menyusui ketika bayi diare</h2>
@@ -58,7 +88,7 @@
                     <img src="{{ asset('img/thumbnails/video11.png') }}" >
                     <h2>Story 11</h2>
                 </a>
-            </div>
+            </div> --}}
         </div>
     </section>
 </x-app-layout>

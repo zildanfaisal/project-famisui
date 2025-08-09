@@ -15,7 +15,7 @@
 
             <li class="menu">
                 @auth
-                    <a href="/video">Video Edukasi</a>
+                    <a href="{{ route('video.index') }}">Video Edukasi</a>
                 @else
                     <a href="#" class="disabled-link" onclick="return false;">Video Edukasi</a>
                 @endauth

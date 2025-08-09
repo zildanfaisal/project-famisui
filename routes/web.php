@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\CustomRegisteredUserController;
+use App\Http\Controllers\VideoController;
 use App\Http\Controllers\VideoProgressController;
 use App\Http\Controllers\PostTestController;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,18 @@ Route::get('/video', function () {
     return view('video'); // nanti buat video.blade.php
 })->name('video');
 
-Route::get('/video/{id}', [App\Http\Controllers\VideoController::class, 'show'])->name('video.show');
+Route::middleware('auth')->group(function () {
+    Route::get('/video/show/{id}', [VideoController::class, 'show'])->name('video.show');
+    Route::get('/video/index', [VideoController::class, 'index'])->name('video.index');
+    Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');
+    Route::post('/video/store', [VideoController::class, 'store'])->name('video.store');
+    Route::get('/video/edit/{id}', [VideoController::class, 'edit'])->name('video.edit');
+    Route::put('/video/update/{id}', [VideoController::class, 'update'])->name('video.update');
+    Route::delete('/video/delete/{id}', [VideoController::class, 'destroy'])->name('video.destroy');
+
+});
+
+Route::get('/video/{id}', [VideoController::class, 'show'])->name('video.show');
 
 
 Route::post('/track-video', [VideoProgressController::class, 'store'])->middleware('auth')->name('track.video');

@@ -2,7 +2,7 @@
     <section class="video-section full-bg">
         <div class="overlay"></div>
         <div class="video-player-content">
-            <h1>{{ $title }}</h1>
+            <h1>{{ $video->title }}</h1>
 
             <div class="video-wrapper">
                 <video
@@ -10,11 +10,12 @@
                     controls
                     controlsList="nodownload"
                     oncontextmenu="return false"
-                    data-video-id="{{ $filename }}"
+                    data-video-id="{{ $video->title }}"
                 >
-                    <source src="{{ asset('videos/' . $filename) }}" type="video/mp4">
+                    <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
                     Browser Anda tidak mendukung pemutar video.
                 </video>
+                <p>{{ $video->description }}</p>
             </div>
         </div>
     </section>
