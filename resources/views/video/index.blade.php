@@ -21,7 +21,8 @@
             <div class="video-cards">
                 @foreach($videos as $video)
                     <div class="video-card">
-                        <a href="{{ route('video.show', $video->id) }}">
+                        <a href="{{ route('video.show', $video->id) }}" style="text-decoration: none;">
+                        {{-- Display thumbnail if available --}}
                         <img src="{{ asset('storage/' . $video->thumbnail_path) }}" alt="{{ $video->title }}" style="width:100%; height:auto;">
                         <h2>{{ $video->title }}</h2>
 
