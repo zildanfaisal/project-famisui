@@ -57,10 +57,10 @@ Route::get('/video/{id}', [VideoController::class, 'show'])->name('video.show');
 Route::post('/track-video', [VideoProgressController::class, 'store'])->middleware('auth')->name('track.video');
 
 
-Route::get('/posttest', [PostTestController::class, 'show'])
-    ->middleware(['auth', 'video.watched'])
-    ->name('posttest');
-Route::post('/posttest', [PostTestController::class, 'submit'])->name('posttest.submit');
+Route::middleware('auth')->group(function () {
+    Route::get('/posttest', [PostTestController::class, 'show'])->name('posttest.show');
+    Route::post('/posttest', [PostTestController::class, 'store'])->name('posttest.store');
+});
 
 Route::get('/kontak', function () {
     return view('kontak'); // jika ada halaman kontak

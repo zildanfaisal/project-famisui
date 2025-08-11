@@ -2,13 +2,34 @@
 
 @section('content')
 <div class="container">
+
+    {{-- Notifikasi Error --}}
+    @if ($errors->any())
+        <div style="color: red; margin-bottom: 1rem;">
+            <strong>Terjadi kesalahan:</strong>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    {{-- Notifikasi Success --}}
+    @if (session('success'))
+        <div style="color: green; margin-bottom: 1rem;">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <h2>Selamat Datang<br><hr></h2>
     <p class="intro-text">
         Tinggalkan jejak Anda untuk mendukung ibu menyusui dengan mengisi survei identitas, lalu ikuti Psikoedukasi Laktasi kami untuk informasi bermanfaat!
     </p>
 
-    <form action="{{ route('posttest.submit') }}" method="POST">
+    <form action="{{ route('posttest.store') }}" method="POST">
         @csrf
+        <input type="hidden" name="video_id" value="{{ $video->id }}">
 
         @php
         $questions = [
