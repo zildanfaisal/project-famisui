@@ -6,7 +6,7 @@
             <p>Panduan terpercaya untuk ibu-ibu baru. Hilangkan mitos, pelajari fakta medis, dan dukung perjalanan menyusui Anda.</p>
 
             @auth
-                <a href="/survei" class="btn">Mulai Test</a>
+                <a href="{{ route('pretest.create') }}" class="btn">Mulai Test</a>
             @else
                 <a href="{{ route('login') }}" class="btn">Login untuk Mulai</a>
             @endauth

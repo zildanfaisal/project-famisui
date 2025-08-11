@@ -50,6 +50,14 @@ class VideoController extends Controller
         return view('video.index', compact('videos'));
     }
 
+    public function rekomendasi(Request $request)
+    {
+        $ids = explode(',', $request->input('ids', ''));
+        $videos = Video::whereIn('id', $ids)->get();
+
+        return view('video.rekomendasi', compact('videos'));
+    }
+
     public function create()
     {
         if (auth()->user()->role !== 'admin') {

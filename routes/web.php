@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\CustomRegisteredUserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\VideoProgressController;
 use App\Http\Controllers\PostTestController;
+use App\Http\Controllers\PretestController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -34,6 +35,12 @@ Route::get('/video', function () {
 })->name('video');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/pretest/create', [PretestController::class, 'create'])->name('pretest.create');
+    Route::post('/pretest/store', [PretestController::class, 'store'])->name('pretest.store');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/video/rekomendasi', [VideoController::class, 'rekomendasi'])->name('video.rekomendasi');
     Route::get('/video/show/{id}', [VideoController::class, 'show'])->name('video.show');
     Route::get('/video/index', [VideoController::class, 'index'])->name('video.index');
     Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');

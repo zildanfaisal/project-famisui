@@ -23,6 +23,13 @@ class User extends Authenticatable
         'password',
         'role', 
         'phone',
+        'usia',
+        'pendidikan_terakhir',
+        'pekerjaan',
+        'jumlah_melahirkan',
+        'periode_postpartum',
+        'jenis_persalinan',
+        'jenis_kelamin_bayi',
     ];
 
     /**
@@ -43,4 +50,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function pretests()
+    {
+        return $this->hasMany(Pretest::class);
+    }
 }

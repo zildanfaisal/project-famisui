@@ -1,0 +1,25 @@
+<x-app-layout>
+    <section class="video-section full-bg">
+        <div class="overlay"></div>
+        <div class="video-content">
+            <h1>Video Rekomendasi Anda</h1>
+
+            @if($videos->isEmpty())
+                <p>Tidak ada video rekomendasi.</p>
+            @else
+            
+            <div class="video-cards">
+                @foreach($videos as $video)
+                    <div class="video-card">
+                        <video width="100%" controls>
+                            <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
+                            Browser Anda tidak mendukung pemutaran video.
+                        </video>
+                        <h2>{{ $video->title }}</h2>
+                    </div>
+                @endforeach
+            </div>
+            @endif
+        </div>
+    </section>
+</x-app-layout>
