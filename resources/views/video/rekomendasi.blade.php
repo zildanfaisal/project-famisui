@@ -1,3 +1,7 @@
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/video.css') }}">
+@endpush
+
 <x-app-layout>
     <section class="video-section full-bg">
         <div class="overlay"></div>

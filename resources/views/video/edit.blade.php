@@ -1,8 +1,12 @@
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/edit-video.css') }}">
+@endpush
+
 <x-app-layout>
     <section class="video-section full-bg">
         <div class="overlay"></div>
         <div class="video-content">
-            <h1>Edit Vidio</h1>
+            <h1>Edit Video</h1>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -16,25 +20,25 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label>Title</label>
+                    <label>Judul Video</label>
                     <input type="text" name="title" class="form-control" value="{{ old('title', $video->title) }}" required>
                 </div>
                 <div class="mb-3">
-                    <label>Thumbnail</label><br>
+                    <label>Thumbnail Video</label>
                     @if($video->thumbnail_path)
                         <img src="{{ asset('storage/' . $video->thumbnail_path) }}" alt="Thumbnail" style="max-width: 200px; display:block; margin-bottom:10px;">
                     @endif
                     <input type="file" name="thumbnail_path" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label>Current Video</label>
+                    <label>Video</label>
                     <video width="200" controls>
                         <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
                     </video>                    
                 </div>
 
                 <div class="mb-3">
-                    <label>New Video File (optional)</label>
+                    <label>Video Baru (opsional)</label>
                     <input type="file" name="video_path" class="form-control">
                     <small class="text-muted">Kosongkan jika tidak ingin mengganti video</small>
                 </div>

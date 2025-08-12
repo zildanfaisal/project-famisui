@@ -1,3 +1,7 @@
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/video.css') }}">
+@endpush
+
 <x-app-layout>
     <section class="video-section full-bg">
         <div class="overlay"></div>
@@ -15,13 +19,13 @@
                     <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
                     Browser Anda tidak mendukung pemutar video.
                 </video>
-                <div style="margin-top:10px;">
+                <!-- <div style="margin-top:10px;">
                     <label>Kecepatan: </label>
                     <button onclick="setSpeed(0.5)">0.5x</button>
                     <button onclick="setSpeed(1)">1x (Normal)</button>
                     <button onclick="setSpeed(1.5)">1.5x</button>
                     <button onclick="setSpeed(2)">2x</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

@@ -8,8 +8,10 @@
 
     <!-- CSS & Font -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/kontak.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/video.css') }}">
+
+    <!-- CSS Tambahan -->
+    @stack('styles')
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
 </head>
 <body>

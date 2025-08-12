@@ -147,3 +147,58 @@
     display: block;
     border-radius: 10px;
 }
+
+
+
+
+
+
+
+/* Pastikan container tombol sejajar di bawah */
+.video-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.video-card .action-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Ukuran konsisten untuk kedua tombol */
+.video-card .btn-warning,
+.video-card .btn-danger {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Tombol Edit */
+.video-card .btn-warning {
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+.video-card .btn-warning:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+/* Tombol Delete */
+.video-card .btn-danger {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+}
+.video-card .btn-danger:hover {
+    background-color: var(--secondary-color);
+}
