@@ -53,9 +53,25 @@ class PretestController extends Controller
             'answers' => json_encode($request->answers),
         ]);
 
+        if ($skor >= 0 && $skor <= 5) {
+            $message = "Selamat, Ibu! Anda telah membangun bonding yang kuat dan penuh kasih dengan buah hati Anda. 
+            Teruslah menjaga dan memperkuat hubungan indah ini, karena setiap pelukan, tatapan, dan sentuhan akan menjadi pondasi berharga bagi tumbuh kembang si kecil.";
+        } elseif ($skor >= 6 && $skor <= 13) {
+            $message = "Terus tingkatkan bonding dengan si kecil. 
+            Bonding dengan si kecil adalah perjalanan yang bisa terus diperkuat setiap hari. 
+            Mulailah dengan sentuhan lembut, tatapan penuh kasih, dan waktu berkualitas bersama. 
+            Setiap langkah kecil yang Ibu lakukan akan membawa hubungan yang lebih hangat dan erat untuk Ibu dan buah hati tercinta.";
+        } else {
+            $message = "Hasil skor di luar rentang yang diharapkan.";
+        }
+
         return redirect()->route('video.rekomendasi', [
             'ids' => implode(',', $request->video_id ?? []),
-        ])->with('success', 'Pretest berhasil disimpan.');
+        ])->with([
+            'success' => 'Pre test berhasil disimpan.',
+            'skor' => $skor,
+            'message' => $message
+        ]);
     }
 
 }

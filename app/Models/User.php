@@ -51,8 +51,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function pretests()
+    public function pretest()
     {
-        return $this->hasMany(Pretest::class);
+        return $this->hasOne(Pretest::class);
+    }
+
+    public function posttest()
+    {
+        return $this->hasMany(Posttest::class);
     }
 }
