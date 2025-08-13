@@ -1,0 +1,87 @@
+.container-detail {
+    background: url('../img/landingpage.jpg') no-repeat center center/cover;
+    /* background-color: #ff99ee; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px 20px; /* kurangi padding biar tidak terlalu renggang */
+    margin-bottom: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card h4 {
+    text-align: center;
+    border-bottom: 1px solid #cacaca; /* garis tipis antar item */
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* hilangkan jarak bawah bawaan */
+}
+
+.card ul li {
+    font-size: 0.95rem;
+    padding: 4px 0; /* rapatkan setiap item */
+    border-bottom: 1px solid #cacaca; /* garis tipis antar item */
+}
+
+.card ul li:last-child {
+    border-bottom: none; /* hilangkan garis di item terakhir */
+}
+
+.card ul li strong {
+    font-weight: 600;
+    color: #000000;
+}
+
+
+.posttest-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.posttest-card {
+    flex: 1 1 calc(25% - 15px); /* 4 card per baris */
+    max-width: calc(25% - 15px);
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px; /* tinggi konsisten */
+    overflow: auto; /* kalau konten terlalu banyak, bisa di-scroll */
+}
+
+.posttest-card h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.posttest-card p {
+    margin: 5px 0;
+}
+
+
+.posttest-content {
+    display: flex;
+    flex-direction: column; /* vertikal kebawah */
+    gap: 8px;
+    font-size: 14px;
+}

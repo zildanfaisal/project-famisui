@@ -37,6 +37,13 @@
                     </li>
                 </ul>
             </li>
+
+            <!-- Menu khusus Admin -->
+            @if(Auth::check() && Auth::user()->role === 'admin')
+                <li>
+                    <a href="{{ route('admin.users.index') }}">Manajemen User</a>
+                </li>
+            @endif
         </ul>
     </nav>
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\VideoProgressController;
 use App\Http\Controllers\PostTestController;
 use App\Http\Controllers\PretestController;
+use App\Http\Controllers\UserManagementController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -90,3 +91,89 @@ Route::post('/register', [CustomRegisteredUserController::class, 'store'])
     ->middleware('guest');
 
 
+
+
+// manajemen user untuk admin
+
+Route::middleware(['auth'])->group(function () {
+    
+        Route::get('/admin/users', [UserManagementController::class, 'index'])->name('admin.users.index');
+
+        // Halaman User Record
+        Route::get('/admin/users/records', [UserManagementController::class, 'records'])->name('admin.users.records');
+
+        
+        // ROUTE SEMENTARA BUAT LIAT TAMPILAN UBAH PASSWORD //
+        Route::get('/preview-ubah-password', function () {
+        
+            $user = (object) [
+            'id' => 1,
+            'name' => 'Ahmad Fauzi',
+            'email' => 'ahmad@example.com'
+        ];
+        return view('UserManajemen.ubahPassword', compact('user'));
+        });
+
+        // ROUTE SEMENTARA BUAT LIAT TAMPILAN DETAIL RECORD//
+        
+        Route::get('/detail-record', function () {
+            // Data dummy user
+            $user = (object) [
+                'name' => 'Siti Aminah',
+                'usia' => 28,
+                'pendidikan' => 'SMA',
+                'pekerjaan' => 'Ibu Rumah Tangga',
+                'no_wa' => '081234567890',
+                'jumlah_melahirkan' => 2,
+                'periode_postpartum' => '3 bulan',
+                'jenis_persalinan' => 'Normal',
+                'jenis_kelamin_bayi' => 'Perempuan',
+                'lokasi' => 'Wonokromo, Surabaya',
+                'jumlah_video' => 3,
+                'skor_pretest' => 80
+            ];
+
+            // Data dummy posttests
+
+            $posttests = [
+                [
+                    'skor' => 85,
+                    'video_id' => 'payudara kempis',
+                    'tanggal' => '2025-08-01 14:35:00'
+                ],
+                [
+                    'skor' => 90,
+                    'video_id' => 'asi tidak cukup',
+                    'tanggal' => '2025-08-05 10:20:00'
+                ],
+                [
+                    'skor' => 78,
+                    'video_id' => 'bayi diare',
+                    'tanggal' => '2025-08-10 16:45:00'
+                ],
+                [
+                    'skor' => 78,
+                    'video_id' => 'bayi diare',
+                    'tanggal' => '2025-08-10 16:45:00'
+                ],
+                                [
+                    'skor' => 85,
+                    'video_id' => 'payudara kempis',
+                    'tanggal' => '2025-08-01 14:35:00'
+                ],
+                [
+                    'skor' => 90,
+                    'video_id' => 'asi tidak cukup',
+                    'tanggal' => '2025-08-05 10:20:00'
+                ],
+                [
+                    'skor' => 78,
+                    'video_id' => 'bayi diare',
+                    'tanggal' => '2025-08-10 16:45:00'
+                ]
+            ];
+
+            return view('UserManajemen.detailRecord', compact('user', 'posttests'));
+        });
+    
+});
