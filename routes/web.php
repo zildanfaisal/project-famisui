@@ -7,6 +7,7 @@ use App\Http\Controllers\VideoProgressController;
 use App\Http\Controllers\PostTestController;
 use App\Http\Controllers\PretestController;
 use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\SurveyController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,9 +28,11 @@ Route::get('/', function () {
 });
 
 // Halaman Tambahan
-Route::get('/survei', function () {
-    return view('survei'); // nanti buat survei.blade.php
-})->name('survei');
+Route::middleware('auth')->group(function () {
+    Route::get('/survey', [SurveyController::class, 'create'])->name('survey.create');
+    Route::post('/survey', [SurveyController::class, 'store'])->name('survey.store');
+});
+
 
 Route::get('/video', function () {
     return view('video'); // nanti buat video.blade.php
@@ -105,23 +108,5 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/users/records', [UserManagementController::class, 'records'])->name('admin.users.records');
 
         Route::get('/admin/users/detail-records/{id}', [UserManagementController::class, 'detailRecords'])->name('admin.users.detail-records');
-
-        
-        // ROUTE SEMENTARA USER REVIEW //
-        Route::get('/admin/users/reviews', function () {
-            return view('UserManajemen.reviews'); // pastikan file ada di resources/views/admin/userreview.blade.php
-        })->name('admin.users.reviews');
-        // =========================== //
-
-        // ROUTE SEMENTARA BUAT LIAT TAMPILAN UBAH PASSWORD //
-        Route::get('/preview-ubah-password', function () {
-        
-            $user = (object) [
-            'id' => 1,
-            'name' => 'Ahmad Fauzi',
-            'email' => 'ahmad@example.com'
-        ];
-        return view('UserManajemen.ubahPassword', compact('user'));
-        });
-        // ================================================= //
+        Route::get('/admin/users/reviews', [UserManagementController::class, 'reviews'])->name('admin.users.reviews');
 });

@@ -27,7 +27,7 @@
                 <ul class="dropdown-content">
                     <li>
                         @auth
-                            <a href="/survei">Survei Kepuasan</a>
+                            <a href="{{ route('survey.create') }}">Survei Kepuasan</a>
                         @else
                             <a href="#" class="disabled-link" onclick="return false;">Survei Kepuasan</a>
                         @endauth

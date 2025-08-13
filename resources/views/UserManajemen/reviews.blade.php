@@ -55,6 +55,7 @@
             <div class="container overflow-hidden">
                 <div class="row gy-4 gy-md-0 gx-xxl-5">
                     <!-- Card 1 -->
+                    @forelse ($reviews as $review)
                     <div class="col-12 col-md-4">
                         <div class="card border-0 border-bottom border-primary shadow-sm">
                             <div class="card-body p-4 p-xxl-5 text-center">
@@ -62,55 +63,20 @@
                                     <!-- Hapus gambar -->
                                     <figcaption>
                                         <!-- Bintang review diperbesar & center -->
-                                        <div class="bsb-ratings text-warning mb-3 fs-1" data-bsb-star="5" data-bsb-star-off="0"></div>
+                                        <div class="bsb-ratings text-warning mb-3 fs-1" data-bsb-star="{{ $review->rating }}" data-bsb-star-off="{{ 5 - $review->rating }}"></div>
                                         <!-- Hapus background icon tanda kutip -->
                                         <blockquote class="mb-4">
-                                            We were so impressed with the work they did for us. They were able to take our vision and turn it into a reality, and they did it all on time and within budget. We would highly recommend them to anyone looking for a reliable partner.
+                                            {{ $review->feedback }}
                                         </blockquote>
-                                        <h4 class="mb-2">Inawati</h4>
-                                        <h5 class="fs-6 text-secondary mb-0">Ibu Rumah Tangga</h5>
+                                        <h4 class="mb-2">{{ $review->user->name }}</h4>
                                     </figcaption>
                                 </figure>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Card 2 -->
-                    <div class="col-12 col-md-4">
-                        <div class="card border-0 border-bottom border-primary shadow-sm">
-                            <div class="card-body p-4 p-xxl-5 text-center">
-                                <figure>
-                                    <figcaption>
-                                        <div class="bsb-ratings text-warning mb-3 fs-1" data-bsb-star="4" data-bsb-star-off="1"></div>
-                                        <blockquote class="mb-4">
-                                            We were looking for a company that could help us develop a new website that was both visually appealing and user-friendly. We are so happy with the results, and we would highly recommend them to anyone looking for a new website.
-                                        </blockquote>
-                                        <h4 class="mb-2">Saminah</h4>
-                                        <h5 class="fs-6 text-secondary mb-0">Pelajar</h5>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="col-12 col-md-4">
-                        <div class="card border-0 border-bottom border-primary shadow-sm">
-                            <div class="card-body p-4 p-xxl-5 text-center">
-                                <figure>
-                                    <figcaption>
-                                        <div class="bsb-ratings text-warning mb-3 fs-1" data-bsb-star="5" data-bsb-star-off="0"></div>
-                                        <blockquote class="mb-4">
-                                            We were looking for a company that could help us with our branding. We needed a website and marketing materials. They were able to create a brand identity that we loved. They worked with us to develop a logo that represented our company.
-                                        </blockquote>
-                                        <h4 class="mb-2">Sarwendah</h4>
-                                        <h5 class="fs-6 text-secondary mb-0">Pegawai Negeri</h5>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-
+                    @empty
+                        <p class="text-center">Belum ada review.</p>
+                    @endforelse
                 </div>
             </div>
             </section>

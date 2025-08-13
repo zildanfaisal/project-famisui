@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Posttest;
+use App\Models\Survey;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -86,5 +87,12 @@ class UserManagementController extends Controller
             'posttests' => $user->posttest ?? collect(),
             'jumlah_video' => $jumlah_video,
         ]);
+    }
+
+    public function reviews()
+    {
+        $reviews = Survey::with('user')->latest()->get();
+
+        return view('UserManajemen.reviews', compact('reviews'));
     }
 }

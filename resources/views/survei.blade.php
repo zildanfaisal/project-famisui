@@ -9,7 +9,9 @@
         <div class="survey-box">
             <h1 class="survey-title">Puaskah Anda dengan FAMISUI</h1>
 
-            <form id="surveyForm">
+            <form id="surveyForm" href="{{ route('survey.store') }}" method="POST">
+                {{-- CSRF Token --}}
+                @csrf  
                 <!-- Rating Bintang -->
                 <div class="star-rating">
                     @for ($i = 5; $i >= 1; $i--)
