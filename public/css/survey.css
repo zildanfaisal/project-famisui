@@ -1,0 +1,99 @@
+/* ===== Background & Center Box ===== */
+.survey-section {
+    position: relative;
+    min-height: 100vh;
+    background: url('../img/landingpage.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.survey-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    z-index: 0;
+}
+
+/* Kotak survey */
+.survey-box {
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding: 30px 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+}
+
+.survey-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* ===== Star Rating ===== */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 40px;
+    color: #ccc; /* bintang putih keabu-abuan */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* Saat hover bintang & semua bintang ke kanan berubah warna */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: gold;
+}
+
+/* Saat dipilih (checked) */
+.star-rating input:checked ~ label {
+    color: gold;
+}
+
+/* ===== Textarea ===== */
+textarea {
+    width: 100%;
+    height: 120px;
+    resize: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* ===== Button ===== */
+.btn-submit {
+    display: block;
+    width: 100%;
+    background-color: #ff78e9;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #fb30d9;
+}

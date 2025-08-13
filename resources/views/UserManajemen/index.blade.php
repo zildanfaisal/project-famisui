@@ -15,7 +15,6 @@
             <h2>
                 <a href="/" class="btn-back">Dashboard</a>
             </h2>
-
             <ul>
                 <li>
                     <a href="{{ route('admin.users.index') }}" class="active">
@@ -25,6 +24,11 @@
                 <li>
                     <a href="{{ route('admin.users.records') }}">
                     User Record
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.users.reviews') }}">
+                    User Review
                     </a>
                 </li>
             </ul>

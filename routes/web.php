@@ -107,6 +107,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/users/detail-records/{id}', [UserManagementController::class, 'detailRecords'])->name('admin.users.detail-records');
 
         
+        // ROUTE SEMENTARA USER REVIEW //
+        Route::get('/admin/users/reviews', function () {
+            return view('UserManajemen.reviews'); // pastikan file ada di resources/views/admin/userreview.blade.php
+        })->name('admin.users.reviews');
+        // =========================== //
+
         // ROUTE SEMENTARA BUAT LIAT TAMPILAN UBAH PASSWORD //
         Route::get('/preview-ubah-password', function () {
         
@@ -117,5 +123,5 @@ Route::middleware(['auth'])->group(function () {
         ];
         return view('UserManajemen.ubahPassword', compact('user'));
         });
-    
+        // ================================================= //
 });

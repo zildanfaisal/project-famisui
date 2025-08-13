@@ -26,6 +26,11 @@
                     User Record
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.users.reviews') }}">
+                    User Review
+                    </a>
+                </li>
             </ul>
         </div>
 

@@ -132,3 +132,19 @@
     border-collapse: collapse;
     min-width: 800px; /* biar tabel nggak terlalu kecil */
 }
+
+
+
+
+
+/* Hapus background icon tanda kutip */
+.bsb-blockquote-icon {
+    background: none !important;
+    padding-left: 0 !important;
+}
+
+/* Pastikan bintang besar dan rata tengah */
+.bsb-ratings {
+    font-size: 2rem; /* Bisa disesuaikan */
+    text-align: center;
+}
