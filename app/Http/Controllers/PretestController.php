@@ -14,11 +14,23 @@ class PretestController extends Controller
         $user = Auth::user();
         $videos = Video::all();
 
+        if (Pretest::where('user_id', $user->id)->exists()) {
+            return redirect()->route('video.index')->withErrors(['Anda sudah melakukan pretest.']);
+        }
+
         return view('pretest.create', compact('user', 'videos'));
     }
 
     public function store(Request $request)
     {
+        $user = Auth::user();
+
+        // Cek apakah user sudah pernah pretest
+        if (Pretest::where('user_id', $user->id)->exists()) {
+            return redirect()->route('video.index')
+                ->with('info', 'Anda sudah mengisi pretest sebelumnya.');
+        }
+
         $request->validate([
             'usia' => 'required|integer',
             'pendidikan_terakhir' => 'required|string',

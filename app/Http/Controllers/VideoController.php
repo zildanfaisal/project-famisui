@@ -22,6 +22,14 @@ class VideoController extends Controller
 
     public function index()
     {
+        $user = auth()->user();
+        if($user ->role == 'user') {
+            $sudahPretest = $user->pretest()->exists();
+            if (!$sudahPretest) {
+                return redirect()->route('pretest.create')->withErrors(['Anda harus mengisi pretest terlebih dahulu.']);
+            }
+        }
+
         $videos = Video::all();
         return view('video.index', compact('videos'));
     }

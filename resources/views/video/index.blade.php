@@ -28,6 +28,14 @@
                     <p>{{ session('message') }}</p>
                 </div>
             @endif
+
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
             
             <div class="video-cards">
                 @foreach($videos as $video)
