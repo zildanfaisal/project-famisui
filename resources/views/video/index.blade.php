@@ -8,11 +8,11 @@
         <div class="video-content">
             <h1>Video</h1>
 
-            @if (session('success'))
+            {{-- @if (session('success'))
                 <div class="alert alert-success">
                     {{ session('success') }}
                 </div>
-            @endif
+            @endif --}}
 
             @if(Auth::check() && Auth::user()->role === 'admin')
                 <div class="text-left" style="margin-bottom: 20px;">
