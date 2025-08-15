@@ -7,7 +7,7 @@
         <div class="overlay"></div>
 
         <div class="survey-box">
-            <h1 class="survey-title">Puaskah Anda dengan FAMISUI</h1>
+            <h1 class="survey-title">Puaskah Anda dengan LactaCare</h1>
 
             <form id="surveyForm" href="{{ route('survey.store') }}" method="POST">
                 {{-- CSRF Token --}}
