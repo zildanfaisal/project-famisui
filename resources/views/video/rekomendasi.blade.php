@@ -12,7 +12,7 @@
                 <p>Tidak ada video rekomendasi.</p>
             @else
 
-            @if(session('skor'))
+            @if(session('skor') !== null)
                 <div style="background: #f0f9ff; padding: 15px; margin-bottom: 20px; border-left: 5px solid #0ea5e9;">
                     <h4>Hasil Pretest</h4>
                     <p>{{ session('message') }}</p>

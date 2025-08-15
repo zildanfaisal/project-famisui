@@ -64,6 +64,7 @@ Route::post('/track-video', [VideoProgressController::class, 'store'])->middlewa
 Route::middleware('auth')->group(function () {
     Route::get('/posttest', [PostTestController::class, 'show'])->name('posttest.show');
     Route::post('/posttest', [PostTestController::class, 'store'])->name('posttest.store');
+    Route::get('/posttest/detail/{id}', [PostTestController::class, 'detail'])->name('posttest.detail');
 });
 
 Route::get('/kontak', function () {
@@ -101,12 +102,14 @@ Route::post('/register', [CustomRegisteredUserController::class, 'store'])
 Route::middleware(['auth'])->group(function () {
     
         Route::get('/admin/users', [UserManagementController::class, 'index'])->name('admin.users.index');
-        Route::get('/admin/users/edit/{id}', [UserManagementController::class, 'edit'])->name('admin.users.edit');
-        Route::put('/admin/users/update/{id}', [UserManagementController::class, 'update'])->name('admin.users.update');
+        // Route::get('/admin/users/edit/{id}', [UserManagementController::class, 'edit'])->name('admin.users.edit');
+        // Route::put('/admin/users/update/{id}', [UserManagementController::class, 'update'])->name('admin.users.update');
 
         // Halaman User Record
         Route::get('/admin/users/records', [UserManagementController::class, 'records'])->name('admin.users.records');
 
         Route::get('/admin/users/detail-records/{id}', [UserManagementController::class, 'detailRecords'])->name('admin.users.detail-records');
         Route::get('/admin/users/reviews', [UserManagementController::class, 'reviews'])->name('admin.users.reviews');
+
+        Route::get('/admin/users/export', [UserManagementController::class, 'exportExcel'])->name('admin.users.export');
 });

@@ -60,7 +60,7 @@
                                 <th>Nama</th>
                                 <th>Email</th>
                                 <th>No. WA</th>
-                                <th>Aksi</th>
+                                {{-- <th>Aksi</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -70,7 +70,7 @@
                                 <td>{{ $d->name }}</td>
                                 <td>{{ $d->email }}</td>
                                 <td>{{ $d->phone }}</td>
-                                <td><a href="{{ route('admin.users.edit', $d->id) }}" class="btn btn-warning btn-sm" >Edit</a></td>
+                                {{-- <td><a href="{{ route('admin.users.edit', $d->id) }}" class="btn btn-warning btn-sm" >Edit</a></td> --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -85,7 +85,7 @@
                                 <th>Email</th>
                                 <th>Usia</th>
                                 <th>No. WA</th>
-                                <th>Aksi</th>
+                                {{-- <th>Aksi</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -96,7 +96,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->usia }}</td>
                                 <td>{{ $user->phone }}</td>
-                                <td><a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning btn-sm" >Edit</a></td>
+                                {{-- <td><a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning btn-sm" >Edit</a></td> --}}
                             </tr>
                             @endforeach
                         </tbody>

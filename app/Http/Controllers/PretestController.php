@@ -36,7 +36,6 @@ class PretestController extends Controller
             'pendidikan_terakhir' => 'required|string',
             'pekerjaan' => 'required|string',
             'jumlah_melahirkan' => 'required|integer',
-            'periode_postpartum' => 'required|integer',
             'jenis_persalinan' => 'required|string',
             'jenis_kelamin_bayi' => 'required|string',
             'video_id' => 'nullable|array',
@@ -51,7 +50,6 @@ class PretestController extends Controller
             'pendidikan_terakhir' => $request->pendidikan_terakhir,
             'pekerjaan' => $request->pekerjaan,
             'jumlah_melahirkan' => $request->jumlah_melahirkan,
-            'periode_postpartum' => $request->periode_postpartum,
             'jenis_persalinan' => $request->jenis_persalinan,
             'jenis_kelamin_bayi' => $request->jenis_kelamin_bayi,
         ]);

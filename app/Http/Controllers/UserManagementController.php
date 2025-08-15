@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Posttest;
 use App\Models\Survey;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UserManagementController extends Controller
 {
@@ -94,5 +96,10 @@ class UserManagementController extends Controller
         $reviews = Survey::with('user')->latest()->get();
 
         return view('UserManajemen.reviews', compact('reviews'));
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new UsersExport, 'user-records.xlsx');
     }
 }

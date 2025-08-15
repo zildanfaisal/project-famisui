@@ -30,8 +30,7 @@ class CustomRegisteredUserController extends Controller
             'email' => [
                 'required', 
                 'string', 
-                'email:rfc,dns', // validasi format email + cek DNS MX
-                'regex:/^[\w\.\-]+@([\w\-]+\.)+com$/i', // hanya domain .com
+                'email',
                 'max:255', 
                 'unique:users' // email harus unik
             ],

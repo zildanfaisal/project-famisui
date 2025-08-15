@@ -63,11 +63,6 @@
                 <input type="text" name="jumlah_melahirkan" class="form-control" required>
             </div>
             <div class="mb-3">
-                <label>Periode Postpartum</label>
-                <br>
-                <input type="text" name="periode_postpartum" class="form-control" required>
-            </div>
-            <div class="mb-3">
                 <label>Jenis Persalinan</label>
                 <br>
                 <input type="text" name="jenis_persalinan" class="form-control" required>

@@ -27,7 +27,6 @@ class User extends Authenticatable
         'pendidikan_terakhir',
         'pekerjaan',
         'jumlah_melahirkan',
-        'periode_postpartum',
         'jenis_persalinan',
         'jenis_kelamin_bayi',
     ];

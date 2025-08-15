@@ -69,6 +69,62 @@
         </div>
         @endforeach
 
+        <hr>
+        <h2>Intensitas Menyusui<br></h2>
+        <p class="intro-text">
+            Mohon isi kuesioner ini sesuai dengan kondisi terkini Ibu dan buah hati. Jawaban yang jujur dan sesuai akan sangat membantu dalam pemantauan perkembangan bonding ibu dan si kecil.
+        </p>
+        <div class="question-box">
+            <p class="question-text">Berapa kali Anda menyusui bayi Anda secara langsung (bukan ASI perah) kemarin? Jika belum menyusui sama sekali isikan “0”<span style="color:red">*</span></p class="question-text">
+            <input type="number" name="intensitas_menyusui" class="form-control" min="0" required>
+        </div>
+
+        <div class="question-box">
+            <p class="question-text">Apakah kemarin bayi Anda diberi susu formula atau makanan lain?<span style="color:red">*</span></p>
+            <div class="answer-options">
+                <label><input type="radio" name="susu_formula" value="1" required> Ya</label>
+                <label><input type="radio" name="susu_formula" value="0" required> Tidak</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="question-text">Pilih jenis perawatan bayi yang telah Anda lakukan secara mandiri kemarin? Anda bisa memilih lebih dari satu perawatan<span style="color:red">*</span></p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="perawatan[]" value="menggendong"> 
+                <label class="form-check-label">Menggendong</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="perawatan[]" value="ganti_popok"> 
+                <label class="form-check-label">Mengganti popok setelah BAK/BAB</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="perawatan[]" value="memandikan"> 
+                <label class="form-check-label">Memandikan</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="perawatan[]" value="memakaikan_baju"> 
+                <label class="form-check-label">Memakaikan baju setelah mandi</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="perawatan[]" value="memijat"> 
+                <label class="form-check-label">Memijat/membelai bayi</label>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <p class="question-text">Apakah Anda mengalami kendala dalam menyusui bayi Anda? Tuliskan kendala Anda</p>
+            <textarea name="kendala_menyusui" class="form-control" rows="3"></textarea>
+        </div>
+        
+        <div class="question-box">
+            <p class="question-text">Apakah Anda ingin melakukan konsultasi terkait kendala menyusui yang Anda alami?<span style="color:red">*</span></p>
+            <div class="answer-options">
+                <label><input type="radio" name="konsultasi_kendala" value="1" required> Ya</label>
+                <label><input type="radio" name="konsultasi_kendala" value="0" required> Tidak</label>
+            </div>
+        </div>
+
+        <br>
         <button type="submit">Kirim Jawaban</button>
     </form>
 </div>

@@ -32,6 +32,13 @@ class PostTestController extends Controller
             'video_id' => 'required|exists:videos,id',
             'answers' => 'required|array',
             'answers.*' => 'required|in:0,1,2',
+
+            'intensitas_menyusui' => 'required|integer|min:0',
+            'susu_formula' => 'required|boolean',
+            'perawatan' => 'required|array',
+            'perawatan.*' => 'string',
+            'kendala_menyusui' => 'nullable|string',
+            'konsultasi_kendala' => 'required|boolean',
         ]);
 
         $skor = array_sum($request->answers);
@@ -40,6 +47,11 @@ class PostTestController extends Controller
             'user_id' => Auth::id(),
             'video_id' => $request->video_id,
             'skor' => $skor,
+            'intensitas_menyusui' => $request->intensitas_menyusui,
+            'susu_formula' => $request->susu_formula,
+            'perawatan' => $request->perawatan,
+            'kendala_menyusui' => $request->kendala_menyusui,
+            'konsultasi_kendala' => $request->konsultasi_kendala,
         ]);
 
         if ($skor >= 0 && $skor <= 5) {
@@ -57,5 +69,12 @@ class PostTestController extends Controller
             'skor' => $skor,
             'message' => $message
         ]);
+    }
+
+    public function detail($id)
+    {
+        $posttest = Posttest::with('video', 'user')->findOrFail($id);
+
+        return view('posttest.detail', compact('posttest'));
     }
 }

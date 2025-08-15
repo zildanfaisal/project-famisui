@@ -13,6 +13,17 @@ class Posttest extends Model
         'user_id',
         'video_id',
         'skor',
+        'intensitas_menyusui',
+        'susu_formula',
+        'perawatan',
+        'kendala_menyusui',
+        'konsultasi_kendala',
+    ];
+
+    protected $casts = [
+        'perawatan' => 'array',
+        'susu_formula' => 'boolean',
+        'konsultasi_kendala' => 'boolean',
     ];
 
     public function user()

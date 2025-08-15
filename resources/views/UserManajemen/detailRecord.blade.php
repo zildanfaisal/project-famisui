@@ -21,7 +21,6 @@
                 <li><strong>Pekerjaan:</strong> {{ $user->pekerjaan }}</li>
                 <li><strong>No. WA:</strong> {{ $user->phone }}</li>
                 <li><strong>Sudah melahirkan:</strong> {{ $user->jumlah_melahirkan }} kali</li>
-                <li><strong>Periode Postpartum:</strong> {{ $user->periode_postpartum }}</li>
                 <li><strong>Jenis Persalinan:</strong> {{ $user->jenis_persalinan }}</li>
                 <li><strong>Jenis Kelamin Bayi:</strong> {{ $user->jenis_kelamin_bayi }}</li>
             </ul>
@@ -39,15 +38,14 @@
         <!-- Card 3, 4, dst -->
         <div class="posttest-wrapper">
             @foreach ($posttests as $index => $pt)
-                <div class="card posttest-card">
+                <a href="{{ route('posttest.detail', $pt->id) }}" class="card posttest-card" style="text-decoration:none; color:inherit;">
                     <h4>Post-Test {{ $index + 1 }}</h4>
                     <div class="posttest-content">
                         <div><strong>Skor:</strong> {{ $pt->skor }}</div>
                         <div><strong>Video:</strong> {{ $pt->video->title }}</div>
-                        <!-- tanggal ini bebas dan, klo masukin jam susah ya tanggal nya aja -->
                         <div><strong>Diakses pada:</strong> {{ $pt->created_at->format('d-m-Y H:i') }}</div>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>
