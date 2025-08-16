@@ -104,6 +104,8 @@
     background: #fff;
 }
 
+
+
 /* Tabel */
 .table-container table {
     border-collapse: collapse;
@@ -133,6 +135,19 @@
     min-width: 800px; /* biar tabel nggak terlalu kecil */
 }
 
+.table-wrappers {
+    width: 100%;
+    overflow-x: auto; /* ini buat slide kanan kiri */
+}
+
+.table-wrappers table {
+    border-collapse: collapse;
+    min-width: 800px; /* biar tabel nggak terlalu kecil */
+}
+
+.table-wrappers table tbody tr:hover {
+    background-color: #ffe7fe; /* abu-abu muda */
+}
 
 
 

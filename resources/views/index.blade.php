@@ -4,7 +4,7 @@
         <div class="hero-content">
             <h1>PsikoEdukasi Laktasi</h1>
             <p>Selamat datang di LactaCare <br> “Edukasi ASI yang Tepat, untuk Ibu Hebat”</p>
-            <p>Platform ini fokus memberikan psikoedukasi selama perjalanan menyusui agar ibu merasa percaya diri dan sukses memberikan ASI</p>
+            <p>Platform ini fokus memberikan PsikoEdukasi selama perjalanan menyusui agar ibu merasa percaya diri dan sukses memberikan ASI</p>
 
             @auth
                 <a href="{{ route('pretest.create') }}" class="btn">Mulai Test</a>

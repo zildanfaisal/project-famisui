@@ -39,7 +39,7 @@
             <h1>USER RECORD</h1>
             <a href="{{ route('admin.users.export') }}" class="btn btn-success">Export to Excel</a>
             <div class="table-container">
-                <div class="table-wrapper">
+                <div class="table-wrappers">
                     <table>
                         <thead>
                             <tr>

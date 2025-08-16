@@ -11,9 +11,14 @@
 <body>
 
     <div class="container-detail">
+        <!-- Header (Judul + Tombol Kembali) -->
+        <div class="header-detail">
+            <a href="{{ route('admin.users.records') }}" class="btn btn-secondary btn-sm">← Kembali</a>
+            <h2>IDENTITAS USER</h2>
+        </div>
+
         <!-- Card 1 -->
         <div class="card">
-            <h3>IDENTITAS USER</h3>
             <ul>
                 <li><strong>Nama:</strong> {{ $user->name }}</li>
                 <li><strong>Usia:</strong> {{ $user->usia }} tahun</li>
@@ -28,7 +33,6 @@
 
         <!-- Card 2 -->
         <div class="card">
-            <!-- <h3>Data Tes & Lokasi</h3> -->
             <ul>
                 <li><strong>Skor Pre-Test:</strong> {{ $user->pretest->skor ?? '-' }}</li>
                 <li><strong>Jumlah Video Dilihat:</strong> {{ $jumlah_video }}</li>
@@ -49,6 +53,7 @@
             @endforeach
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 
 </body>
