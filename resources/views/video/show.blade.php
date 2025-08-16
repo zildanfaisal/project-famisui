@@ -19,13 +19,13 @@
                     <source src="{{ asset('storage/' . $video->video_path) }}" type="video/mp4">
                     Browser Anda tidak mendukung pemutar video.
                 </video>
-                <div style="margin-top:10px;">
+                {{-- <div style="margin-top:10px;">
                     <label>Kecepatan: </label>
                     <button onclick="setSpeed(0.5)">0.5x</button>
                     <button onclick="setSpeed(1)">1x (Normal)</button>
                     <button onclick="setSpeed(1.5)">1.5x</button>
                     <button onclick="setSpeed(2)">2x</button>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -41,10 +41,10 @@
             window.location.href = "{{ route('posttest.show', ['video_id' => $video->id]) }}";
         });
     </script>
-    <script>
+    {{-- <script>
         function setSpeed(rate) {
             document.getElementById('videoPlayer').playbackRate = rate;
         }
-    </script>
+    </script> --}}
 
 </x-app-layout>
