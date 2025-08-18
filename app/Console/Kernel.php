@@ -15,8 +15,9 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('wati:send-messages')->dailyAt('09:00');
+        $schedule->command('whatsapp:send-daily')->dailyAt('08:00');
     }
+
 
     /**
      * Register the commands for the application.

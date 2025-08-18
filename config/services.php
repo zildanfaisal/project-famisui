@@ -31,4 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'watzap' => [
+        'api_key' => env('WATZAP_API_KEY'),
+        'number_key' => env('WATZAP_NUMBER_KEY'),
+    ],
+
 ];

@@ -54,7 +54,7 @@ class CustomRegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
         // Jangan auto-login, arahkan ke halaman login
         return redirect()->route('login')->with('success', 'Pendaftaran berhasil! Silakan login.');
