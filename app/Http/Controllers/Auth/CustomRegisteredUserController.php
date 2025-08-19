@@ -27,6 +27,7 @@ class CustomRegisteredUserController extends Controller
                 'max:20', 
                 'regex:/^(\+62|0)8[1-9][0-9]{6,14}$/'
             ],
+            'address' => ['nullable', 'string', 'max:255'], // Validasi untuk alamat
             'email' => [
                 'required', 
                 'string', 
@@ -50,6 +51,7 @@ class CustomRegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'phone' => $formattedPhone,
+            'address' => $request->address, // Simpan alamat
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

@@ -38,6 +38,7 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithColu
             'Usia',
             'Pekerjaan',
             'No. WA',
+            'Domisili/Alamat',
             'Pendidikan Terakhir',
             'Jumlah Melahirkan',
             'Jenis Persalinan',
@@ -66,7 +67,8 @@ class UsersExport implements FromCollection, WithHeadings, WithMapping, WithColu
             $user->name,
             $user->usia,
             $user->pekerjaan,
-            ' ' . $user->phone, // biar gak jadi angka ilmiah
+            ' ' . $user->phone,
+            $user->address ?? '-', // Alamat
             $user->pendidikan_terakhir,
             $user->jumlah_melahirkan,
             $user->jenis_persalinan,

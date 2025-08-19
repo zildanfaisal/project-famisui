@@ -26,6 +26,7 @@
       @csrf
       <input type="text" name="name" placeholder="Nama Lengkap" required>
       <input type="text" name="phone" placeholder="No. WhatsApp" required>
+      <input type="text" name="address" placeholder="Alamat" required>
       <input type="email" name="email" placeholder="Email" required>
 
       <div style="position: relative;">

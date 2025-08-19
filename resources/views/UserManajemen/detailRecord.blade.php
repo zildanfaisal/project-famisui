@@ -25,6 +25,7 @@
                 <li><strong>Pendidikan Terakhir:</strong> {{ $user->pendidikan_terakhir }}</li>
                 <li><strong>Pekerjaan:</strong> {{ $user->pekerjaan }}</li>
                 <li><strong>No. WA:</strong> {{ $user->phone }}</li>
+                <li><strong>Domisili/Alamat:</strong> {{ $user->address }}</li>
                 <li><strong>Sudah melahirkan:</strong> {{ $user->jumlah_melahirkan }} kali</li>
                 <li><strong>Jenis Persalinan:</strong> {{ $user->jenis_persalinan }}</li>
                 <li><strong>Jenis Kelamin Bayi:</strong> {{ $user->jenis_kelamin_bayi }}</li>
